@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>toggle_faq</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <style>
+        body,
+        ul,
+        li,
+        a,
+        div,
+        h1,
+        h2,
+        h3,
+        h4,
+        p {
+            text-decoration: none;
+            color: #000;
+            padding: 0;
+            margin: 0;
+            letter-spacing: 0;
+            border: 0;
+        }
+
+        p {
+            width: 100%;
+            height: 80px;
+            background: #ddd;
+        }
+
+        p a {
+            display: block;
+            height: 80px;
+            cursor: pointer;
+            line-height: 80px;
+            float: right;
+            margin-right: 20px;
+        }
+
+        li {
+            list-style: none;
+        }
+
+    </style>
+
+
+    <!--qna 토글슬라이드-->
+    <p class="header">
+        <a>버튼</a>
+    </p>
+    <div style="position: relative; width: 100%; height: 800px; overflow: hidden;">
+        <ul class="answer">
+            <li>1ㅇㅇ</li>
+            <li>1ㅇㅇ</li>
+            <li>ㅇㅇㅇ1</li>
+        </ul>
+    </div>
+
+    <button>Inflate!</button>
+
+    <div class='col-lg-2 col-md-2 well bubble'></div>
+
+
+    <script type="text/javascript">
+        $(function() {
+            $('.nana').click(function() {
+                $('.answer').slideToggle(600);
+            });
+            $('.aa').click(function() {
+                $(this).addClass('tr');
+            });
+            $('button').click(function() {
+                $('.bubble').toggleClass('animate');
+            })
+            $('.header a').click(function() {
+                $('.answer').toggleClass('animate2');
+            })
+
+
+
+
+
+
+        });
+
+    </script>
+
+
+    <style>
+        body {
+            position: relative
+        }
+
+        .answer {
+            width: 400px;
+            height: 400px;
+            position: absolute;
+            top: -400px;
+            right: -400px;
+            background: #ebf59f;
+            transform: scale(0);
+            transition: all 1s;
+
+        }
+
+        .animate2 {
+            transform: scale(1);
+            right: 0 !important;
+            top:0 !important;
+        }
+
+        .bubble {
+            transform: scale(0);
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #C00;
+            transition: all 1s;
+        }
+
+        .bubble.animate {
+            transform: scale(1);
+        }
+
+    </style>
+
+</body>
+
+</html>
